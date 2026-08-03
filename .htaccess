@@ -1,0 +1,37 @@
+# AVES Jakarta - Apache Configuration
+Options -Indexes
+ServerSignature Off
+DirectoryIndex index.html
+
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Cegah akses web langsung ke konfigurasi, database, dokumentasi, dan kode internal.
+    RewriteRule ^(?:config|database|docs|lib|scripts|tests|includes|admin/includes)(?:/|$) - [F,L,NC]
+    RewriteRule (^|/)\. - [F,L]
+    
+    # Allow direct access to files and directories
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Arahkan URL yang tidak ditemukan ke halaman utama.
+    RewriteRule ^(.*)$ index.html [L]
+</IfModule>
+
+# Cegah file internal dan cadangan terunduh dari browser.
+<FilesMatch "(?i)\.(?:sql|md|log|ini|env|bak|old|dist)$">
+    Require all denied
+</FilesMatch>
+
+# Set default character encoding
+AddDefaultCharset UTF-8
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.html$">
+        Header always set X-Content-Type-Options "nosniff"
+        Header always set X-Frame-Options "DENY"
+        Header always set Referrer-Policy "same-origin"
+        Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+    </FilesMatch>
+</IfModule>

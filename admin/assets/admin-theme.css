@@ -1,0 +1,1035 @@
+:root {
+    --admin-navy: #0f2d5a;
+    --admin-navy-strong: #092348;
+    --admin-blue: #0867c5;
+    --admin-blue-hover: #0756a5;
+    --admin-blue-soft: #eaf3ff;
+    --admin-background: #f3f6fb;
+    --admin-surface: #ffffff;
+    --admin-border: #d6e0ee;
+    --admin-text: #172033;
+    --admin-muted: #64748b;
+    --admin-danger: #c62828;
+    --admin-radius: 12px;
+    --admin-shadow: 0 4px 16px rgba(15, 45, 90, .07);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.admin-shell {
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--admin-background) !important;
+    color: var(--admin-text) !important;
+    font-family: Inter, Arial, sans-serif !important;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+body.admin-shell h1,
+body.admin-shell h2,
+body.admin-shell h3,
+body.admin-shell h4 {
+    color: var(--admin-navy);
+    font-family: "Plus Jakarta Sans", Inter, Arial, sans-serif !important;
+    letter-spacing: -.015em;
+}
+
+body.admin-shell > header {
+    position: sticky;
+    top: 0;
+    z-index: 9996;
+    height: 70px;
+    min-height: 70px;
+    border-bottom: 1px solid rgba(84, 152, 255, .32);
+    background: var(--admin-navy) !important;
+    box-shadow: 0 3px 14px rgba(9, 35, 72, .16) !important;
+}
+
+body.admin-shell > header > div {
+    width: 100%;
+    max-width: 1280px !important;
+    height: 69px;
+    min-height: 69px;
+    margin: 0 auto;
+    padding: 10px 24px !important;
+}
+
+body.admin-shell > header h1,
+body.admin-shell > header h2,
+body.admin-shell > header h3 {
+    margin: 0;
+    color: #fff !important;
+    font-size: 23px !important;
+}
+
+body.admin-shell > header .text-white,
+body.admin-shell > header [class*="text-on-primary"] {
+    color: #fff !important;
+}
+
+body.admin-shell:not(.admin-dashboard-shell) > header img[src*="aves-blue"] {
+    width: 40px !important;
+    height: 40px !important;
+    flex: 0 0 40px;
+}
+
+body.admin-shell > header a[class*="bg-red"],
+body.admin-shell > header a[class*="bg-error"] {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-header-actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-header-identity {
+    display: inline-flex;
+    width: 88px;
+    height: 40px;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 11px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.admin-header-identity .material-symbols-outlined {
+    font-size: 18px;
+}
+
+.admin-header-logout,
+body.admin-dashboard-shell .admin-topbar-logout {
+    display: inline-flex !important;
+    width: 100px;
+    height: 42px;
+    min-height: 42px;
+    flex: 0 0 100px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px !important;
+    border: 1px solid #df4545 !important;
+    border-radius: 10px !important;
+    background: var(--admin-danger) !important;
+    color: #fff !important;
+    font-family: Inter, Arial, sans-serif !important;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(198, 40, 40, .2);
+    transform: none !important;
+}
+
+.admin-header-logout:hover,
+body.admin-dashboard-shell .admin-topbar-logout:hover {
+    border-color: #a91f1f !important;
+    background: #a91f1f !important;
+}
+
+body.admin-shell:not(.admin-dashboard-shell) > main {
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    padding: 28px 24px 72px !important;
+}
+
+body.admin-shell > main > nav {
+    min-height: 54px;
+    margin-bottom: 24px !important;
+    padding: 12px 16px;
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius);
+    background: var(--admin-surface);
+    box-shadow: 0 2px 10px rgba(15, 45, 90, .04);
+}
+
+body.admin-shell > main > nav a {
+    color: var(--admin-blue) !important;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+body.admin-shell > main > section.mb-8 {
+    margin-bottom: 26px !important;
+}
+
+body.admin-shell > main > section.mb-8 h2 {
+    margin: 0 0 6px !important;
+    color: var(--admin-navy);
+    font-size: clamp(25px, 3vw, 32px) !important;
+}
+
+body.admin-shell > main > section.mb-8 p {
+    margin: 0;
+    color: var(--admin-muted) !important;
+}
+
+body.admin-shell .bg-white.rounded-lg.shadow,
+body.admin-shell .bg-white.rounded-lg.shadow-md,
+body.admin-shell .bg-white.rounded-xl.shadow,
+body.admin-shell .bg-white.rounded-xl.shadow-md,
+body.admin-shell [class*="bg-surface-container-lowest"][class*="rounded"] {
+    border: 1px solid var(--admin-border) !important;
+    border-radius: var(--admin-radius) !important;
+    background: var(--admin-surface) !important;
+    box-shadow: var(--admin-shadow) !important;
+}
+
+body.admin-shell [class*="border-l-4"] {
+    border-left-color: var(--admin-blue) !important;
+}
+
+body.admin-shell .bg-blue-100,
+body.admin-shell .bg-green-100,
+body.admin-shell .bg-purple-100,
+body.admin-shell [class*="bg-secondary-container/20"],
+body.admin-shell [class*="bg-tertiary-container/20"],
+body.admin-shell [class*="bg-primary-container/20"],
+body.admin-shell [class*="bg-surface-tint/20"] {
+    background: var(--admin-blue-soft) !important;
+}
+
+body.admin-shell .text-blue-600,
+body.admin-shell [class*="text-secondary"],
+body.admin-shell [class*="text-tertiary"],
+body.admin-shell [class*="text-surface-tint"] {
+    color: var(--admin-blue) !important;
+}
+
+body.admin-shell [class*="border-l-4"] .text-green-600,
+body.admin-shell [class*="border-l-4"] .text-purple-600 {
+    color: var(--admin-blue) !important;
+}
+
+body.admin-shell a[class*="bg-secondary"],
+body.admin-shell button[class*="bg-secondary"],
+body.admin-shell .admin-button-primary {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid var(--admin-blue) !important;
+    border-radius: 10px !important;
+    background: var(--admin-blue) !important;
+    color: #fff !important;
+    font-family: Inter, Arial, sans-serif !important;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(8, 103, 197, .16);
+    transition: background-color .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+
+body.admin-shell a[class*="bg-secondary"]:hover,
+body.admin-shell button[class*="bg-secondary"]:hover,
+body.admin-shell .admin-button-primary:hover {
+    border-color: var(--admin-blue-hover) !important;
+    background: var(--admin-blue-hover) !important;
+    box-shadow: 0 5px 14px rgba(8, 103, 197, .22);
+    transform: translateY(-1px);
+}
+
+body.admin-shell a[class*="bg-red"],
+body.admin-shell button[class*="bg-red"],
+body.admin-shell a[class*="bg-error"],
+body.admin-shell button[class*="bg-error"] {
+    border-radius: 10px !important;
+    background: var(--admin-danger) !important;
+    color: #fff !important;
+}
+
+body.admin-shell button,
+body.admin-shell a {
+    font-family: Inter, Arial, sans-serif;
+}
+
+body.admin-shell input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
+body.admin-shell select,
+body.admin-shell textarea {
+    min-height: 42px;
+    border: 1px solid #c8d5e5 !important;
+    border-radius: 10px !important;
+    background: #fff !important;
+    color: var(--admin-text) !important;
+    font: 400 14px/1.4 Inter, Arial, sans-serif !important;
+    box-shadow: none !important;
+}
+
+body.admin-shell input:focus,
+body.admin-shell select:focus,
+body.admin-shell textarea:focus {
+    border-color: var(--admin-blue) !important;
+    outline: 3px solid rgba(8, 103, 197, .13) !important;
+    outline-offset: 0;
+}
+
+body.admin-shell table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 14px;
+}
+
+body.admin-shell table thead,
+body.admin-shell table thead tr {
+    border-color: var(--admin-border) !important;
+    background: #edf4fd !important;
+}
+
+body.admin-shell table th {
+    color: var(--admin-navy) !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: .045em;
+    text-transform: uppercase;
+}
+
+body.admin-shell table td {
+    color: #273449;
+}
+
+body.admin-shell table tbody tr {
+    border-color: #e4ebf4 !important;
+    transition: background-color .12s ease;
+}
+
+body.admin-shell table tbody tr:hover {
+    background: #f6f9fd !important;
+}
+
+body.admin-shell table button.text-blue-600,
+body.admin-shell table button.text-red-600 {
+    width: 38px;
+    height: 38px;
+    margin: 0 2px !important;
+    border-radius: 9px;
+}
+
+body.admin-shell table button.text-blue-600 {
+    background: var(--admin-blue-soft);
+    color: var(--admin-blue) !important;
+}
+
+body.admin-shell table button.text-red-600 {
+    background: #fff0f0;
+    color: var(--admin-danger) !important;
+}
+
+body.admin-shell .fixed.inset-0 > .bg-white {
+    border: 1px solid var(--admin-border);
+    border-radius: 16px !important;
+    box-shadow: 0 24px 60px rgba(9, 35, 72, .22) !important;
+}
+
+body.admin-shell #modal,
+body.admin-shell #deleteModal {
+    z-index: 10000 !important;
+}
+
+body.admin-shell #modal {
+    align-items: flex-start !important;
+    overflow-y: auto;
+    padding: 24px;
+}
+
+body.admin-shell #modal > .bg-white {
+    max-height: calc(100dvh - 48px) !important;
+    margin: 0 auto !important;
+}
+
+body.admin-shell .fixed.inset-0 > .bg-white h2,
+body.admin-shell .fixed.inset-0 > .bg-white h3 {
+    color: var(--admin-navy) !important;
+}
+
+/* Navigasi samping administrator */
+body.admin-sidebar-shell {
+    min-height: 100vh;
+}
+
+body.admin-sidebar-shell:not(.admin-dashboard-shell) {
+    padding-left: 272px;
+}
+
+body.admin-sidebar-shell #sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9998;
+    display: flex;
+    height: 100dvh;
+    flex-direction: column;
+    width: 272px !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    overflow: hidden;
+    border-right: 1px solid rgba(255, 255, 255, .12) !important;
+    background: var(--admin-navy) !important;
+    box-shadow: 6px 0 24px rgba(9, 35, 72, .12);
+    transform: translateX(0);
+    transition: transform .22s ease;
+}
+
+body.admin-sidebar-shell .admin-sidebar-brand {
+    display: flex;
+    min-height: 132px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, .13);
+}
+
+body.admin-sidebar-shell .admin-sidebar-brand-logo {
+    display: block;
+    width: 184px;
+    height: auto;
+    max-height: 112px;
+    flex: 0 0 auto;
+    object-fit: contain;
+    filter:
+        drop-shadow(1px 0 0 #fff)
+        drop-shadow(-1px 0 0 #fff)
+        drop-shadow(0 1px 0 #fff)
+        drop-shadow(0 -1px 0 #fff);
+}
+
+body.admin-sidebar-shell #sidebar h2 {
+    margin: 0;
+    color: #fff !important;
+    font-size: 23px !important;
+    line-height: 1.2;
+}
+
+body.admin-sidebar-shell .admin-sidebar-nav {
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 16px 12px 10px;
+    scrollbar-color: rgba(255, 255, 255, .28) transparent;
+    scrollbar-width: thin;
+}
+
+body.admin-sidebar-shell .admin-sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body.admin-sidebar-shell .admin-sidebar-link {
+    display: grid !important;
+    width: 100%;
+    grid-template-columns: 24px minmax(0, 1fr);
+    min-height: 50px;
+    align-items: center;
+    gap: 11px;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    color: #dbe9fb !important;
+    border-radius: 10px !important;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-decoration: none;
+    transform: none !important;
+}
+
+body.admin-sidebar-shell .admin-sidebar-link > .material-symbols-outlined {
+    width: 24px;
+    color: #bad2ef;
+    font-size: 22px;
+    text-align: center;
+}
+
+body.admin-sidebar-shell .admin-sidebar-link > span:last-child {
+    white-space: nowrap;
+}
+
+body.admin-sidebar-shell .admin-sidebar-report {
+    margin-top: 6px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, .16);
+}
+
+body.admin-sidebar-shell #sidebar a {
+    color: #dbe9fb !important;
+    border-radius: 10px !important;
+}
+
+body.admin-sidebar-shell #sidebar a:hover {
+    background: rgba(255, 255, 255, .11) !important;
+    color: #fff !important;
+}
+
+body.admin-sidebar-shell #sidebar .admin-sidebar-link.is-active {
+    background: #fff !important;
+    color: var(--admin-navy) !important;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .12);
+    transform: none !important;
+}
+
+body.admin-sidebar-shell #sidebar .admin-sidebar-link.is-active > .material-symbols-outlined {
+    color: var(--admin-blue) !important;
+}
+
+body.admin-sidebar-shell .admin-sidebar-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 4px 0 0 25px;
+    padding: 3px 0 3px 14px;
+    border-left: 2px solid rgba(255, 255, 255, .2);
+    list-style: none;
+}
+
+body.admin-sidebar-shell .admin-sidebar-submenu a {
+    display: block;
+    padding: 7px 10px !important;
+    color: #bdd2ec !important;
+    border-radius: 7px !important;
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+body.admin-sidebar-shell .admin-sidebar-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: auto;
+    padding: 14px 16px 18px;
+    border-top: 1px solid rgba(255, 255, 255, .14);
+    background: transparent;
+}
+
+body.admin-sidebar-shell .admin-sidebar-profile {
+    display: grid !important;
+    width: 100%;
+    min-height: 62px;
+    grid-template-columns: 40px minmax(0, 1fr) 20px;
+    align-items: center;
+    gap: 11px;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, .08);
+    color: #fff !important;
+    text-decoration: none;
+}
+
+body.admin-sidebar-shell .admin-sidebar-profile:hover {
+    border-color: rgba(255, 255, 255, .28);
+    background: rgba(255, 255, 255, .14) !important;
+}
+
+body.admin-sidebar-shell .admin-sidebar-profile.is-active {
+    border-color: rgba(255, 255, 255, .42);
+    background: rgba(255, 255, 255, .18);
+    box-shadow: inset 3px 0 0 #fff;
+}
+
+body.admin-sidebar-shell .admin-sidebar-profile__avatar {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--admin-navy);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+body.admin-sidebar-shell .admin-sidebar-profile__copy {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 2px;
+}
+
+body.admin-sidebar-shell .admin-sidebar-profile__copy strong,
+body.admin-sidebar-shell .admin-sidebar-profile__copy small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body.admin-sidebar-shell .admin-sidebar-profile__copy strong {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+body.admin-sidebar-shell .admin-sidebar-profile__copy small {
+    color: #bad2ef;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+body.admin-sidebar-shell .admin-sidebar-profile__arrow {
+    color: #bad2ef;
+    font-size: 19px;
+}
+
+body.admin-dashboard-shell .admin-topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+body.admin-dashboard-shell .admin-topbar-logout {
+    gap: 0;
+}
+
+.admin-sidebar-toggle,
+.admin-sidebar-overlay {
+    display: none;
+}
+
+.admin-topbar-logout__icon {
+    display: none;
+    font-size: 19px;
+}
+
+/*
+ * Ruang aman untuk PWA lama yang masih memakai Window Controls Overlay.
+ * Manifest terbaru menggunakan standalone, tetapi aturan ini mencegah kontrol
+ * Windows menimpa header selama pembaruan PWA belum diterapkan.
+ */
+html.aves-window-controls-overlay body.admin-shell:not(.admin-dashboard-shell) > header {
+    min-height: calc(70px + env(titlebar-area-height, 38px));
+    padding-top: env(titlebar-area-height, 38px);
+}
+
+html.aves-window-controls-overlay body.admin-shell:not(.admin-dashboard-shell) .aves-global-back-dock {
+    top: calc(70px + env(titlebar-area-height, 38px));
+}
+
+body.admin-dashboard-shell .admin-dashboard-main {
+    margin-left: 272px !important;
+}
+
+body.admin-sidebar-shell:not(.admin-dashboard-shell) .aves-global-back-dock {
+    left: 272px;
+}
+
+html.aves-window-controls-overlay body.admin-dashboard-shell .admin-dashboard-main > header {
+    height: calc(70px + env(titlebar-area-height, 38px));
+    min-height: calc(70px + env(titlebar-area-height, 38px));
+    flex-basis: calc(70px + env(titlebar-area-height, 38px));
+    padding-top: calc(1rem + env(titlebar-area-height, 38px)) !important;
+}
+
+html.aves-window-controls-overlay body.admin-dashboard-shell .aves-global-back-dock {
+    top: calc(10px + env(titlebar-area-height, 38px));
+}
+
+body.admin-dashboard-shell .admin-dashboard-main > header {
+    position: sticky !important;
+    top: 0;
+    z-index: 9996;
+    width: 100%;
+    height: 70px;
+    min-height: 70px;
+    flex: 0 0 70px;
+    padding-right: 26px !important;
+    border-bottom: 1px solid rgba(84, 152, 255, .32) !important;
+    background: #fff !important;
+    box-shadow: 0 2px 12px rgba(15, 45, 90, .06) !important;
+}
+
+body.admin-dashboard-shell .admin-dashboard-main > header h1 {
+    color: var(--admin-navy) !important;
+}
+
+body.admin-dashboard-shell .admin-dashboard-main > div {
+    padding: 32px 26px 26px !important;
+}
+
+body.admin-shell .aves-global-back-dock {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    left: 0;
+    z-index: 9997;
+    display: flex;
+    min-height: 64px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 24px;
+    border-bottom: 1px solid var(--admin-border);
+    background: rgba(243, 246, 251, .98);
+    box-shadow: 0 3px 12px rgba(15, 45, 90, .06);
+    pointer-events: none;
+    backdrop-filter: blur(8px);
+}
+
+body.admin-shell .aves-global-back {
+    position: static;
+    pointer-events: auto;
+}
+
+body.admin-dashboard-shell .aves-global-back-dock {
+    top: 10px;
+    right: 24px;
+    left: auto;
+    width: auto;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+body.admin-dashboard-shell .aves-global-back {
+    min-height: 40px;
+    padding: .5rem .75rem;
+}
+
+/* Menu laporan */
+body.admin-shell.reports-page > header {
+    min-height: 70px;
+    padding: 0 !important;
+}
+
+body.admin-shell.reports-page > header > div {
+    padding-right: 24px !important;
+}
+
+body.admin-shell.reports-page > main {
+    padding: 30px 24px 72px !important;
+}
+
+body.admin-shell.reports-page .aves-global-back-dock {
+    top: 13px;
+    right: 24px;
+    left: auto;
+    width: fit-content;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+body.admin-shell.reports-page .aves-global-back {
+    min-height: 40px;
+    padding: .5rem .75rem;
+}
+
+body.admin-shell.reports-page .card {
+    --accent: var(--admin-blue) !important;
+    border-color: var(--admin-border) !important;
+    box-shadow: var(--admin-shadow) !important;
+}
+
+body.admin-shell.reports-page .card:hover {
+    border-color: var(--admin-blue) !important;
+}
+
+body.admin-shell.reports-page .icon {
+    background: var(--admin-blue) !important;
+}
+
+body.admin-shell.reports-page .card footer {
+    color: var(--admin-blue) !important;
+}
+
+@media (max-width: 900px) {
+    body.admin-shell:not(.admin-dashboard-shell) > main {
+        padding: 24px 16px 64px !important;
+    }
+
+    body.admin-shell [class*="grid-cols-3"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    body.admin-shell > header > div {
+        padding: 10px 16px !important;
+    }
+
+    body.admin-dashboard-shell .admin-dashboard-main > div {
+        padding: 28px 16px 20px !important;
+    }
+}
+
+/* Sidebar berubah menjadi drawer pada tablet dan mobile. */
+@media (max-width: 1024px) {
+    body.admin-sidebar-shell,
+    body.admin-sidebar-shell:not(.admin-dashboard-shell) {
+        padding-left: 0;
+    }
+
+    body.admin-sidebar-shell #sidebar {
+        width: min(272px, 88vw) !important;
+        transform: translateX(-102%);
+    }
+
+    body.admin-sidebar-shell.admin-sidebar-open #sidebar {
+        transform: translateX(0);
+    }
+
+    body.admin-sidebar-shell .admin-sidebar-toggle {
+        position: fixed;
+        top: 14px;
+        left: 14px;
+        z-index: 10000;
+        display: inline-flex;
+        width: 42px;
+        height: 42px;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, .28);
+        border-radius: 10px;
+        background: var(--admin-navy);
+        color: #fff;
+        box-shadow: 0 4px 14px rgba(9, 35, 72, .22);
+        cursor: pointer;
+    }
+
+    body.admin-sidebar-shell.admin-sidebar-open .admin-sidebar-toggle {
+        left: calc(min(272px, 88vw) - 54px);
+    }
+
+    body.admin-sidebar-shell .admin-sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9997;
+        display: block;
+        background: rgba(9, 24, 48, .5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s ease, visibility .2s ease;
+    }
+
+    body.admin-sidebar-shell.admin-sidebar-open .admin-sidebar-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    body.admin-sidebar-shell:not(.admin-dashboard-shell) > header > div {
+        padding-left: 68px !important;
+    }
+
+    body.admin-sidebar-shell:not(.admin-dashboard-shell) .aves-global-back-dock {
+        left: 0;
+    }
+
+    body.admin-dashboard-shell .admin-dashboard-main {
+        margin-left: 0 !important;
+    }
+
+    body.admin-dashboard-shell .admin-dashboard-main > header > div:first-child {
+        padding-left: 50px;
+    }
+
+    body.admin-dashboard-shell .aves-global-back-dock {
+        top: 10px;
+        right: 16px;
+        left: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    body.admin-dashboard-shell .admin-topbar-actions {
+        gap: 8px;
+    }
+
+    body.admin-dashboard-shell .admin-topbar-logout {
+        width: 42px;
+        flex-basis: 42px;
+        padding: 0 !important;
+    }
+
+    .admin-topbar-logout__icon {
+        display: inline-flex;
+    }
+
+    body.admin-dashboard-shell .admin-topbar-logout__label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
+
+    body.admin-shell.reports-page > header > div {
+        height: 69px;
+        min-height: 69px;
+        padding-right: 16px !important;
+    }
+
+    body.admin-shell.reports-page > main {
+        padding: 20px 14px 64px !important;
+    }
+
+    body.admin-shell.reports-page .aves-global-back-dock {
+        top: 12px;
+        right: 12px;
+        left: auto;
+        width: fit-content;
+        min-height: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    body.admin-shell.reports-page .aves-global-back {
+        width: 40px;
+        min-height: 40px;
+        padding: 0;
+    }
+
+    body.admin-shell.reports-page .aves-global-back__label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
+
+    body.admin-shell > header > div {
+        flex-wrap: nowrap;
+        gap: 10px !important;
+    }
+
+    body.admin-shell > header > div > div:first-child {
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    body.admin-shell > header h1 {
+        min-width: 0;
+        overflow: hidden;
+        font-size: 19px !important;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .admin-header-actions {
+        gap: 8px;
+    }
+
+    .admin-header-identity {
+        width: 40px;
+        padding: 0;
+    }
+
+    .admin-header-identity__label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
+
+    .admin-header-logout {
+        width: 42px;
+        flex-basis: 42px;
+        padding: 0 !important;
+        font-size: 0;
+    }
+
+    .admin-header-logout::before {
+        font-family: "Material Symbols Outlined";
+        font-size: 19px;
+        font-weight: normal;
+        content: "logout";
+    }
+
+    body.admin-shell > main > nav {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    body.admin-shell .aves-global-back-dock {
+        top: 70px;
+        min-height: 58px;
+        padding: 8px 16px;
+    }
+
+    body.admin-dashboard-shell .aves-global-back-dock {
+        top: 10px;
+        right: 12px;
+        left: auto;
+        width: auto;
+        min-height: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    body.admin-shell .aves-global-back {
+        width: 40px;
+        min-height: 40px;
+        right: auto;
+        bottom: auto;
+        padding: 0;
+    }
+
+    body.admin-shell .aves-global-back__label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
+
+    body.admin-shell form.flex,
+    body.admin-shell .mb-6.flex.gap-4 {
+        flex-direction: column;
+    }
+
+    body.admin-shell input,
+    body.admin-shell select,
+    body.admin-shell textarea {
+        max-width: 100%;
+        font-size: 16px !important;
+    }
+
+    body.admin-shell a[class*="bg-secondary"],
+    body.admin-shell button[class*="bg-secondary"] {
+        width: 100%;
+    }
+}
+
+@media print {
+    body.admin-shell {
+        background: #fff !important;
+    }
+}

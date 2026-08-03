@@ -1,0 +1,7 @@
+# Kredensial lokal/hosting tidak boleh masuk repository.
+/config/database.credentials.php
+
+# Berkas sistem dan hasil sementara.
+.DS_Store
+Thumbs.db
+/tmp/

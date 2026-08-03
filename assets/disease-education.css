@@ -1,0 +1,214 @@
+.disease-education {
+    margin-top: 22px;
+    padding-top: 22px;
+    border-top: 1px solid #d7e1ee;
+    color: #172033;
+    font-family: Inter, Arial, sans-serif;
+}
+
+.disease-education * {
+    box-sizing: border-box;
+}
+
+.disease-education__heading {
+    margin-bottom: 16px;
+}
+
+.disease-education__eyebrow {
+    display: block;
+    margin-bottom: 5px;
+    color: #0867c5;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .075em;
+    text-transform: uppercase;
+}
+
+.disease-education__heading h3 {
+    margin: 0 0 6px;
+    color: #0f2d5a !important;
+    font: 700 20px/1.3 "Plus Jakarta Sans", Inter, sans-serif !important;
+}
+
+.disease-education__heading p {
+    margin: 0;
+    color: #5c6b80;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.disease-education__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.education-card {
+    overflow: hidden;
+    border: 1px solid #cbd9e9;
+    border-radius: 13px;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(15, 45, 90, .07);
+}
+
+.education-card--therapy {
+    border-color: #b9d7ca;
+}
+
+.education-card__image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-bottom: 1px solid #d6e1ee;
+    background-color: #e9f4fb;
+    background-position: var(--sprite-x) var(--sprite-y);
+    background-repeat: no-repeat;
+}
+
+.education-card__image--disease {
+    background-image: url("education/bird-disease-atlas.png");
+    background-size: var(--sprite-size-x, 600%) var(--sprite-size-y, 500%);
+}
+
+.education-card__image--standalone {
+    background-position: center;
+    background-size: contain;
+}
+
+.education-card__image--medicine {
+    background-image: url("education/veterinary-treatment-atlas.png");
+    background-size: 300% 200%;
+}
+
+.education-card__body {
+    padding: 15px;
+}
+
+.education-card__label {
+    display: inline-flex;
+    margin-bottom: 7px;
+    padding: 4px 8px;
+    border: 1px solid #b8d4f3;
+    border-radius: 999px;
+    background: #edf5ff;
+    color: #0756a5;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.education-card--therapy .education-card__label {
+    border-color: #a8d5c1;
+    background: #edf9f3;
+    color: #17663f;
+}
+
+.education-card__body h4 {
+    margin: 0 0 7px;
+    color: #0f2d5a !important;
+    font: 700 16px/1.35 "Plus Jakarta Sans", Inter, sans-serif !important;
+}
+
+.education-card__body p {
+    margin: 0;
+    color: #526176;
+    font-size: 13px;
+    line-height: 1.58;
+}
+
+.disease-education__warning {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 13px 14px;
+    border: 1px solid #efc56c;
+    border-radius: 11px;
+    background: #fff8e8;
+    color: #714d08;
+}
+
+.disease-education__warning .material-symbols-outlined {
+    flex: 0 0 auto;
+    color: #bd7d00;
+    font-size: 21px;
+}
+
+.disease-education__warning p {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.55;
+}
+
+.disease-education__source {
+    margin-top: 12px;
+    padding: 13px 14px;
+    border: 1px solid #c9d8e9;
+    border-radius: 11px;
+    background: #f4f8fd;
+}
+
+.disease-education__source > div {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.disease-education__source .material-symbols-outlined {
+    flex: 0 0 auto;
+    color: #0867c5;
+    font-size: 20px;
+}
+
+.disease-education__source p {
+    margin: 0;
+    color: #4d5e75;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.disease-education__source a {
+    color: #0867c5;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.disease-education__source a:hover {
+    color: #0756a5;
+}
+
+.disease-education__accessed {
+    white-space: nowrap;
+}
+
+.disease-education__image-note {
+    margin-top: 7px !important;
+    padding-top: 7px;
+    border-top: 1px dashed #c6d4e5;
+    color: #66758a !important;
+    font-style: italic;
+}
+
+@media (max-width: 700px) {
+    .disease-education__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-card__image {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media print {
+    .disease-education {
+        break-inside: avoid;
+    }
+
+    .education-card,
+    .disease-education__warning,
+    .disease-education__source {
+        box-shadow: none;
+    }
+}

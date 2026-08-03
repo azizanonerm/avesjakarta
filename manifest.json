@@ -1,0 +1,70 @@
+{
+  "id": "./",
+  "name": "AVES - Avian & Exotic Animal Veterinary Services Jakarta",
+  "short_name": "AVES",
+  "description": "Sistem pakar untuk membantu screening awal penyakit kulit burung menggunakan metode Certainty Factor.",
+  "lang": "id-ID",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "any",
+  "background_color": "#f9f9ff",
+  "theme_color": "#0f2d5a",
+  "categories": [
+    "medical",
+    "utilities"
+  ],
+  "icons": [
+    {
+      "src": "assets/icons/aves-blue-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/aves-blue-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/aves-blue-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Masuk",
+      "short_name": "Masuk",
+      "description": "Masuk ke akun AVES",
+      "url": "login.php",
+      "icons": [
+        {
+          "src": "assets/icons/aves-blue-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Mulai Diagnosis",
+      "short_name": "Diagnosis",
+      "description": "Buka halaman konsultasi penyakit kulit burung",
+      "url": "konsultasi.php",
+      "icons": [
+        {
+          "src": "assets/icons/aves-blue-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
