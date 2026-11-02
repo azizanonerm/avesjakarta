@@ -21,6 +21,67 @@
   <a href="#dokumentasi-tampilan">Dokumentasi</a>
 </p>
 
+## Dokumentasi Tampilan
+
+### Halaman Beranda
+
+![Halaman Beranda](docs/screenshots/beranda.png)
+
+Halaman beranda menampilkan informasi utama mengenai aplikasi AVES.
+
+### Halaman Login
+
+![Halaman Login](docs/screenshots/login.png)
+
+Halaman login digunakan untuk masuk sebagai pengguna atau administrator.
+
+### Halaman Konsultasi
+
+![Halaman Konsultasi](docs/screenshots/konsultasi.png)
+
+Halaman konsultasi digunakan untuk memilih gejala penyakit burung.
+
+### Pemilihan Gejala
+
+![Pemilihan Gejala](docs/screenshots/pemilihan-gejala.png)
+
+Pengguna dapat memilih gejala dan menentukan tingkat keyakinan.
+
+### Hasil Diagnosis
+
+![Hasil Diagnosis](docs/screenshots/hasil-diagnosis.png)
+
+Sistem menampilkan kemungkinan penyakit dan nilai Certainty Factor.
+
+### Detail Penyakit
+
+![Detail Penyakit](docs/screenshots/detail-penyakit.png)
+
+Halaman ini menampilkan deskripsi penyakit dan saran penanganan.
+
+### Riwayat Diagnosis
+
+![Riwayat Diagnosis](docs/screenshots/riwayat.png)
+
+Pengguna dapat melihat riwayat konsultasi yang pernah dilakukan.
+
+### Dashboard Administrator
+
+![Dashboard Administrator](docs/screenshots/dashboard-admin.png)
+
+Administrator dapat memantau data dan aktivitas sistem.
+
+### Manajemen Basis Pengetahuan
+
+![Manajemen Basis Pengetahuan](docs/screenshots/manajemen-pengetahuan.png)
+
+Administrator dapat mengelola penyakit, gejala, dan aturan Certainty Factor.
+
+### Laporan PDF
+
+![Laporan PDF](docs/screenshots/laporan-pdf.png)
+
+Sistem dapat membuat laporan data dalam format PDF.
 ---
 
 ## Tentang Proyek
